@@ -1,6 +1,6 @@
 <template>
   <div id="contact">
-    <span class="title">You can contact me some ways:</span>
+    <span class="title">You can contact me next ways:</span>
     <div class="contact_method">
       <img alt="" src="/img/telegram.svg" />
       <span class="contact_name">Via Telegram: </span>
