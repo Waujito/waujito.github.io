@@ -1,0 +1,79 @@
+$dark_1: #2b2a33;
+$dark_2: #1e1d24;
+$dark_3: #17181b;
+
+$background-color1: $dark_1;
+$background-color2: $dark_2;
+
+$font-color1: #eee;
+$font-color2: #b9bbbe;
+
+$trans_03: all 0.3s ease;
+
+$border-line-color: #2b2a33;
+$border-line-gradient_color: linear-gradient(
+  90deg,
+  rgba(188, 29, 193, 1) 4%,
+  rgba(255, 0, 194, 1) 54%,
+  rgba(111, 61, 219, 1) 100%
+);
+
+$cycle-radius: 100500px;
+
+%cycle {
+  border-radius: $cycle-radius;
+}
+
+$link-color: #00aff4;
+
+@mixin link($color: $link-color) {
+  color: $color;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: $color;
+  }
+}
+
+@mixin border_line_horizontal(
+  $color: $border-line-gradient_color,
+  $height: 2px,
+  $width: 100%
+) {
+  height: $height;
+  width: $width;
+  background: $border-line-color;
+  background: $color;
+}
+
+@mixin border_line_vertical(
+  $color: $border-line-gradient_color,
+  $height: 100%,
+  $width: 2px
+) {
+  height: $height;
+  width: $width;
+  background: $border-line-color;
+  background: $color;
+}
+
+@mixin border_gradient_draw(
+  $width: 2px,
+  $color: $border-line-gradient_color,
+  $background-color: $background-color2,
+  $dump_color: $border-line-color
+) {
+  background: $border-line-color;
+  background: $border-line-gradient_color;
+
+  padding: $width;
+
+  & > :first-child {
+    height: 100%;
+    width: 100%;
+    background-color: $background-color;
+  }
+}

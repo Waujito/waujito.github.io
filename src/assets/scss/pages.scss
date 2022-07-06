@@ -1,0 +1,103 @@
+@import "./library";
+
+.projects {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding: 20px;
+
+  .projects_header {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+
+    align-self: center;
+  }
+  .projects_list {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    .project_border {
+      width: 100%;
+
+      margin-bottom: 10px;
+      border-radius: 10px;
+
+      @include border_gradient_draw();
+      .project {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+
+        border-radius: 10px;
+
+        user-select: none;
+
+        color: $font-color1;
+        .title {
+          font-size: 24px;
+
+          margin-bottom: 10px;
+
+          display: flex;
+          flex-direction: row;
+
+          max-height: 50px;
+          align-items: center;
+          justify-content: center;
+        }
+        .desc {
+          color: $font-color2;
+        }
+      }
+    }
+  }
+}
+
+#contact {
+  width: 100%;
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  .title {
+    font-size: 28px;
+
+    margin-bottom: 20px;
+  }
+
+  .contact_method {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+
+    font-size: 22px;
+    margin-bottom: 5px;
+    img {
+      height: 70px;
+      margin-right: 10px;
+    }
+
+    .contact_name {
+      margin-right: 5px;
+    }
+  }
+}
+
+#root {
+  width: 100%;
+
+  padding: 20px;
+
+  display: flex;
+
+  .about {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
