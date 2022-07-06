@@ -4,9 +4,12 @@ import { RouterLink } from "vue-router";
 
 <template>
   <nav class="leftside_nav">
-    <RouterLink to="/" class="main_router_link"
-      ><div><img src="/img/home.svg" alt="Home" /></div
-    ></RouterLink>
+    <RouterLink to="/" class="main_router_link">
+      <div>
+        <img src="/img/home.svg" alt="Home" />
+        <span class="alternative_text">Home</span>
+      </div>
+    </RouterLink>
     <RouterLink to="/projects" class="main_router_link">
       <div>
         <img
@@ -14,6 +17,7 @@ import { RouterLink } from "vue-router";
           alt="Projects"
           style="width: 85%; height: 85%"
         />
+        <span class="alternative_text">Projects</span>
       </div>
     </RouterLink>
     <RouterLink to="/contact" class="main_router_link">
@@ -23,6 +27,7 @@ import { RouterLink } from "vue-router";
           alt="Contact me"
           style="width: 85%; height: 85%"
         />
+        <span class="alternative_text">Contact me</span>
       </div>
     </RouterLink>
   </nav>

@@ -61,6 +61,11 @@
   width: 100%;
   padding: 20px;
 
+  @media (max-width: $adaptive_state1) {
+    padding: 0;
+    padding-top: 20px;
+  }
+
   display: flex;
   flex-direction: column;
 
@@ -78,9 +83,16 @@
 
     font-size: 22px;
     margin-bottom: 5px;
+
     img {
       height: 70px;
       margin-right: 10px;
+    }
+
+    @media (max-width: $adaptive_state2) {
+      img {
+        display: none;
+      }
     }
 
     .contact_name {

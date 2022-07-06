@@ -1,5 +1,5 @@
 $dark_1: #2b2a33;
-$dark_2: #1e1d24;
+$dark_2: #1c1c1c;
 $dark_3: #17181b;
 
 $background-color1: $dark_1;
@@ -9,6 +9,9 @@ $font-color1: #eee;
 $font-color2: #b9bbbe;
 
 $trans_03: all 0.3s ease;
+
+$adaptive_state1: 520px;
+$adaptive_state2: 370px;
 
 $border-line-color: #2b2a33;
 $border-line-gradient_color: linear-gradient(
@@ -27,13 +30,15 @@ $cycle-radius: 100500px;
 $link-color: #00aff4;
 
 @mixin link($color: $link-color) {
-  color: $color;
-
   &:hover {
     text-decoration: underline;
   }
 
-  &:visited {
+  &,
+  &:focus,
+  &:active,
+  &:visited,
+  &:hover {
     color: $color;
   }
 }
