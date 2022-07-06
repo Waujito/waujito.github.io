@@ -9,3 +9,6 @@ app.use(router);
 app.mount("#app");
 
 import "./assets/scss/base.scss";
+import "./assets/scss/leftside_nav.scss";
+import "./assets/scss/header.scss";
+import "./assets/scss/pages.scss";

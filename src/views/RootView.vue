@@ -3,6 +3,7 @@
 <template>
   <div id="root">
     <div class="about">
+      Hello there and welcome to my personal website!<br /><br />
       My name is Waujito. Real name is Vetrov Vadim.<br />
       I am a programer. It is a really fun and cool hobby for me. I love it
       💖<br />
