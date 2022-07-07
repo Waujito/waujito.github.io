@@ -2,6 +2,11 @@ $dark_1: #2b2a33;
 $dark_2: #1c1c1c;
 $dark_3: #17181b;
 
+$green_button_normal: #2c9f4b;
+$green_button_hover: #237e3b;
+$green_button_pressed: #1b612e;
+$green_button_inactive: #000;
+
 $background-color1: $dark_1;
 $background-color2: $dark_2;
 
@@ -25,6 +30,35 @@ $cycle-radius: 100500px;
 
 %cycle {
   border-radius: $cycle-radius;
+}
+
+@mixin green_button {
+  background-color: $green_button_normal;
+  transition: $trans_03;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  min-height: 40px;
+  min-width: 50px;
+
+  padding: 5px;
+  border-radius: 5px;
+
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    transition: $trans_03;
+    background-color: $green_button_hover;
+  }
+
+  &:active {
+    transition: $trans_03;
+    background-color: $green_button_pressed;
+  }
 }
 
 $link-color: #00aff4;

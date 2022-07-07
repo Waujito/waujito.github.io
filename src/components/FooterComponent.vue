@@ -7,13 +7,22 @@
           class="link"
           href="https://www.flaticon.com/authors/aswell-studio"
           title="Aswell Studio"
+          target="_blank"
           >Aswell Studio</a
         >,
-        <a href="https://www.freepik.com" title="Freepik" class="link"
+        <a
+          href="https://www.freepik.com"
+          title="Freepik"
+          class="link"
+          target="_blank"
           >Freepik</a
         >
         from
-        <a href="https://www.flaticon.com/" title="Flaticon" class="link"
+        <a
+          href="https://www.flaticon.com/"
+          title="Flaticon"
+          class="link"
+          target="_blank"
           >www.flaticon.com</a
         >
       </div>

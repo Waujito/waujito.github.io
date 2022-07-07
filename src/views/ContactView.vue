@@ -4,12 +4,14 @@
     <div class="contact_method">
       <img alt="" src="/img/telegram.svg" />
       <span class="contact_name">Via Telegram: </span>
-      <a class="link" href="https://t.me/waujito">@waujito</a>
+      <a class="link" href="https://t.me/waujito" target="_blank">@waujito</a>
     </div>
     <div class="contact_method">
       <img alt="" src="/img/email_icon.svg" />
-      <span class="contact_name">With E-mail: </span>
-      <a class="link" href="mailto:vetrovvd@yandex.ru">vetrovvd@yandex.ru</a>
+      <span class="contact_name">With <nobr>E-mail:</nobr> </span>
+      <a class="link" href="mailto:vetrovvd@yandex.ru" target="_blank"
+        >vetrovvd@yandex.ru</a
+      >
     </div>
   </div>
 </template>
