@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /img/
+Disallow: /
+
+Sytemap: https://waujito.github.io/sitemap.xml
