@@ -26,9 +26,7 @@
           >www.flaticon.com</a
         >
       </div>
-      <div class="copyright">
-        © Vetrov V. D., 2021 - 2022 All rights reserved
-      </div>
+      <div class="copyright">© Vetrov V. D., 2022 All rights reserved</div>
     </div>
   </div>
 </template>
