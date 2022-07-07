@@ -143,10 +143,24 @@
   padding: 20px;
 
   display: flex;
+  flex-direction: column;
 
   .about {
     font-size: 20px;
     line-height: 1.2;
+  }
+
+  .links {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+
+    .link {
+      img {
+        margin-right: 20px;
+        height: 64px;
+      }
+    }
   }
 }
 
