@@ -51,6 +51,12 @@ a:hover {
     padding: 10px;
 
     flex-grow: 1;
+
+    box-shadow: 6px 6px 10px 0px $background-color2;
+
+    @media (max-width: $adaptive_state1) {
+      box-shadow: 2px 2px 10px 2px $background-color2;
+    }
   }
 
   .content {
