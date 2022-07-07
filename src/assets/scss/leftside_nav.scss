@@ -95,24 +95,31 @@
 
     justify-content: center;
 
-    .main_router_link {
+    .nav_link {
       margin-right: 10px;
 
-      user-select: none;
-      -moz-user-select: none;
-      -webkit-user-select: none;
+      .main_router_link {
+        height: 100%;
+        width: 100%;
 
-      @include border_gradient_draw();
-
-      div {
         display: flex;
-        justify-content: center;
-        align-items: center;
 
-        padding: 10px;
+        user-select: none;
+        -moz-user-select: none;
+        -webkit-user-select: none;
 
-        img {
-          display: none;
+        @include border_gradient_draw();
+
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          padding: 10px;
+
+          img {
+            display: none;
+          }
         }
       }
     }
