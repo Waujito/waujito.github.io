@@ -3,4 +3,4 @@ Allow: /
 Disallow: /img/
 Disallow: /
 
-Sytemap: https://waujito.github.io/sitemap.xml
+Sitemap: https://waujito.github.io/sitemap.xml
