@@ -3,6 +3,13 @@
 @import "./nullstyle";
 @import "./library";
 
+* {
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(66, 64, 64, 0.75);
+  /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+  /* толщина */
+}
+
 html,
 body {
   line-height: 1.21;
@@ -127,4 +134,40 @@ a:hover {
     transition: $trans_03;
     background-color: $green_button_pressed;
   }
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 4px;
+  background-color: rgba(66, 64, 64, 0.75);
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+}
+
+/* Стрелки off */
+
+::-webkit-scrollbar-button {
+  &:vertical:start:decrement,
+  &:vertical:end:increment,
+  &:horizontal:start:decrement,
+  &:horizontal:end:increment {
+    display: none;
+  }
+}
+
+.scrollbar_y,
+.scrollbar_x {
+  overflow-y: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.5) rgba(66, 64, 64, 0.75);
+  /* «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;
+  /* толщина */
 }
