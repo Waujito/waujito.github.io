@@ -51,6 +51,8 @@ TimeAgo.addDefaultLocale(en);
 </template>
 
 <script>
+import { cacheAdapterEnhancer } from "axios-extensions";
+
 export default {
   data() {
     return {
@@ -64,7 +66,10 @@ export default {
   methods: {
     async load_gh_news() {
       let response = await axios.get(
-        "https://api.github.com/users/waujito/events",
+        // By default browser cache get requests
+        // Because this is a CORS request and github does not accept "Cache-Control" header
+        // Added timestamp parameter that will prevent caching
+        `https://api.github.com/users/waujito/events?timestamp=${new Date()}`,
         {
           headers: {
             Accept: "application/json",
