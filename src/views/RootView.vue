@@ -51,8 +51,6 @@ TimeAgo.addDefaultLocale(en);
 </template>
 
 <script>
-import { cacheAdapterEnhancer } from "axios-extensions";
-
 export default {
   data() {
     return {
