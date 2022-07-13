@@ -6,6 +6,8 @@ import RootView from "../views/RootView.vue";
 const AMFiBotComponent = () => import("../views/Projects/AMFiBotComponent.vue");
 const MangaParserComponent = () =>
   import("../views/Projects/MangaParserComponent.vue");
+const PersonalWebsiteComponent = () =>
+  import("../views/Projects/PersonalWebsiteComponent.vue");
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -34,6 +36,11 @@ const router = createRouter({
       path: "/projects/manga_parser",
       name: "manga_parser",
       component: MangaParserComponent,
+    },
+    {
+      path: "/projects/personal_website",
+      name: "personal_website",
+      component: PersonalWebsiteComponent,
     },
   ],
 });

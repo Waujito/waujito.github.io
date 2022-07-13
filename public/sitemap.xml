@@ -25,4 +25,9 @@
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
+  <url>
+    <loc>https://waujito.github.io/projects/personal_website</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>

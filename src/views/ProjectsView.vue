@@ -46,6 +46,26 @@
           </div>
         </div>
       </div>
+      <div class="project_border">
+        <div class="project">
+          <div class="title">Personal website</div>
+          <div class="desc">About me website</div>
+          <div class="buttons">
+            <RouterLink
+              to="/projects/personal_website"
+              class="about_project_button green_button"
+              >About project</RouterLink
+            >
+            <a
+              class="github_button"
+              href="https://github.com/Waujito/waujito.github.io"
+              target="_blank"
+            >
+              <img alt="View project on github" src="/img/github.png" />
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
