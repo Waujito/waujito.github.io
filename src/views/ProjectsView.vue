@@ -4,17 +4,17 @@
     <div class="projects_list">
       <div class="project_border">
         <div class="project">
-          <div class="title">Cat bot</div>
+          <div class="title">AMFi bot</div>
           <div class="desc">A bot for messengers.</div>
           <div class="buttons">
             <RouterLink
-              to="/projects/cat_bot"
+              to="/projects/amfi_bot"
               class="about_project_button green_button"
               >About project</RouterLink
             >
             <a
               class="github_button"
-              href="https://github.com/Cat-TheBot"
+              href="https://github.com/AMFi-Bot"
               target="_blank"
             >
               <img alt="View project on github" src="/img/github.png" />
