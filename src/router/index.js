@@ -3,7 +3,7 @@ import ContactViewVue from "../views/ContactView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
 import RootView from "../views/RootView.vue";
 
-const CatBotComponent = () => import("../views/Projects/CatBotComponent.vue");
+const AMFiBotComponent = () => import("../views/Projects/AMFiBotComponent.vue");
 const MangaParserComponent = () =>
   import("../views/Projects/MangaParserComponent.vue");
 
@@ -26,9 +26,9 @@ const router = createRouter({
       component: ContactViewVue,
     },
     {
-      path: "/projects/cat_bot",
+      path: "/projects/amfi_bot",
       name: "cat_bot",
-      component: CatBotComponent,
+      component: AMFiBotComponent,
     },
     {
       path: "/projects/manga_parser",
