@@ -37,14 +37,103 @@ TimeAgo.addDefaultLocale(en);
     <div class="gh-news">
       <div class="title">Github Activity</div>
       <div class="news">
-        <div class="new" v-for="gh_new in gh_news" :key="gh_new">
+        <tippy
+          class="new"
+          v-for="gh_new in gh_news"
+          :key="gh_new"
+          v-tippy="{
+            arrow: true,
+            animateFill: false,
+            animation: 'scale',
+            theme: 'translucent',
+            interactive: true,
+            followCursor: 'horizontal',
+          }"
+        >
           <div class="data">
             <div class="ev_type">{{ gh_new.type }}</div>
-            <div class="repo">{{ gh_new.repo.name }}</div>
+            <a
+              class="repo link"
+              :href="`https://github.com/${gh_new.repo.name}`"
+              target="_blank"
+              >{{ gh_new.repo.name }}</a
+            >
           </div>
 
           <div class="timestamp">{{ gh_new.time_ago }}</div>
-        </div>
+
+          <template #content>
+            <div class="activity_tooltip">
+              <div class="ev_type">{{ gh_new.type }}</div>
+              <a
+                class="repo link"
+                :href="`https://github.com/${gh_new.repo.name}`"
+                target="_blank"
+                >{{ gh_new.repo.name }}</a
+              >
+              <span v-if="gh_new.type == 'Pushed to '">
+                <tippy
+                  v-tippy="{
+                    animateFill: false,
+                    animation: 'scale',
+                    arrow: false,
+                    interactive: true,
+                  }"
+                >
+                  <span class="link"
+                    >{{ gh_new.payload.commits.length }} commits</span
+                  >
+
+                  <template #content>
+                    <div class="commits_tooltip">
+                      <a
+                        class="commit_tooltip link"
+                        v-for="commit in gh_new.payload.commits"
+                        :key="commit"
+                        :href="`https://github.com/${gh_new.repo.name}/commit/${commit.sha}`"
+                        target="_blank"
+                      >
+                        {{ commit.message }}
+                      </a>
+                    </div>
+                  </template>
+                </tippy></span
+              >
+              <span
+                v-else-if="
+                  gh_new.type == 'Released ' &&
+                  gh_new.payload &&
+                  gh_new.payload.release &&
+                  gh_new.payload.release.name
+                "
+              >
+                <tippy
+                  v-tippy="{
+                    animateFill: false,
+                    animation: 'scale',
+                    interactive: true,
+                    arrow: false,
+                  }"
+                >
+                  <span class="link">Release details</span>
+                  <template #content>
+                    <div class="release_tooltip">
+                      <a
+                        class="release_name link"
+                        target="_blank"
+                        :href="`https://github.com/${gh_new.repo.name}/releases/tag/${gh_new.payload.release.tag_name}`"
+                      >
+                        {{ gh_new.payload.release.name }}
+                      </a>
+                    </div>
+                  </template>
+                </tippy>
+              </span>
+
+              <div class="timestamp">{{ gh_new.time_ago }}</div>
+            </div>
+          </template>
+        </tippy>
       </div>
     </div>
   </div>

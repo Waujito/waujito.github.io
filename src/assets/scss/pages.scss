@@ -145,6 +145,8 @@
   display: flex;
   flex-direction: row;
 
+  justify-content: space-between;
+
   .gh-news {
     margin-left: 20px;
   }
@@ -213,14 +215,6 @@
         flex-direction: row;
         width: 100%;
 
-        @media (max-width: 350px) {
-          flex-direction: column;
-
-          & > * {
-            margin-top: 5px;
-          }
-        }
-
         justify-content: space-between;
 
         border: 2px solid $dark_2;
@@ -236,6 +230,8 @@
           flex-direction: row;
 
           align-items: center;
+
+          white-space: nowrap;
 
           & > * {
             margin-right: 5px;
@@ -258,9 +254,40 @@
           text-align: end;
         }
 
+        @media (max-width: 350px) {
+          flex-direction: column;
+
+          .data {
+            overflow: hidden;
+          }
+
+          & > * {
+            margin-top: 5px;
+          }
+
+          .timestamp {
+            text-align: start;
+          }
+        }
+
         margin-bottom: 10px;
       }
     }
+  }
+}
+
+.activity_tooltip {
+  display: flex;
+  flex-direction: column;
+}
+
+.commits_tooltip {
+  display: flex;
+  flex-direction: column;
+  .commit_tooltip {
+    margin-top: 5px;
+
+    line-height: 1.1;
   }
 }
 
