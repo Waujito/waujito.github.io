@@ -1,11 +1,48 @@
-<script setup>
+<script setup lang="ts">
+import type { GithubEventsResponse } from "@/types/github_events";
 import axios from "axios";
 import TimeAgo from "javascript-time-ago";
 
 // English.
 import en from "javascript-time-ago/locale/en";
+import { ref, type Ref } from "vue";
 
 TimeAgo.addDefaultLocale(en);
+
+const timeAgo = new TimeAgo("en-US");
+
+const activity_loaded: Ref<boolean> = ref(false);
+const gh_activity: Ref<GithubEventsResponse> = ref([]);
+
+const load_gh_news = async () => {
+  try {
+    const response = await axios.get(
+      // By default browser cache get requests
+      // This is a CORS request so github does not accept "Cache-Control" header
+      // Added timestamp parameter that will prevent caching
+      `https://api.github.com/users/${
+        import.meta.env.VITE_GITHUB_NICKNAME
+      }/events/public?timestamp=${new Date()}`,
+      {
+        headers: {
+          Accept: "application/json",
+        },
+      }
+    );
+    activity_loaded.value = true;
+
+    gh_activity.value = (<GithubEventsResponse>response.data).filter(
+      (q) => q.type == "PushEvent" || q.type == "ReleaseEvent"
+    );
+
+    //gh_event.time_ago = timeAgo.format(new Date(gh_event.created_at));
+  } catch (error) {
+    alert("Cannot load github news");
+    console.log(error);
+  }
+};
+
+load_gh_news();
 </script>
 
 <template>
@@ -36,11 +73,10 @@ TimeAgo.addDefaultLocale(en);
 
     <div class="gh-news">
       <div class="title">Github Activity</div>
-      <div class="news">
+      <div class="news" v-if="activity_loaded">
         <tippy
           class="new"
-          v-for="gh_new in gh_news"
-          :key="gh_new"
+          v-for="gh_event in gh_activity"
           v-tippy="{
             arrow: true,
             animateFill: false,
@@ -51,27 +87,37 @@ TimeAgo.addDefaultLocale(en);
           }"
         >
           <div class="data">
-            <div class="ev_type">{{ gh_new.type }}</div>
+            <div class="ev_type">
+              {{
+                gh_event.type == "PushEvent"
+                  ? "Pushed"
+                  : gh_event.type == "ReleaseEvent"
+                  ? "Released"
+                  : gh_event.type
+              }}
+            </div>
             <a
               class="repo link"
-              :href="`https://github.com/${gh_new.repo.name}`"
+              :href="`https://github.com/${gh_event.repo.name}`"
               target="_blank"
-              >{{ gh_new.repo.name }}</a
+              >{{ gh_event.repo.name }}</a
             >
           </div>
 
-          <div class="timestamp">{{ gh_new.time_ago }}</div>
+          <div class="timestamp">
+            {{ timeAgo.format(new Date(gh_event.created_at)) }}
+          </div>
 
           <template #content>
             <div class="activity_tooltip">
-              <div class="ev_type">{{ gh_new.type }}</div>
+              <div class="ev_type">{{ gh_event.type }}</div>
               <a
                 class="repo link"
-                :href="`https://github.com/${gh_new.repo.name}`"
+                :href="`https://github.com/${gh_event.repo.name}`"
                 target="_blank"
-                >{{ gh_new.repo.name }}</a
+                >{{ gh_event.repo.name }}</a
               >
-              <span v-if="gh_new.type == 'Pushed to '">
+              <span v-if="gh_event.type == 'PushEvent'">
                 <tippy
                   v-tippy="{
                     animateFill: false,
@@ -81,16 +127,16 @@ TimeAgo.addDefaultLocale(en);
                   }"
                 >
                   <span class="link"
-                    >{{ gh_new.payload.commits.length }} commits</span
+                    >{{ gh_event.payload.commits.length }} commits</span
                   >
 
                   <template #content>
                     <div class="commits_tooltip">
                       <a
                         class="commit_tooltip link"
-                        v-for="commit in gh_new.payload.commits"
+                        v-for="commit in gh_event.payload.commits"
                         :key="commit"
-                        :href="`https://github.com/${gh_new.repo.name}/commit/${commit.sha}`"
+                        :href="`https://github.com/${gh_event.repo.name}/commit/${commit.sha}`"
                         target="_blank"
                       >
                         {{ commit.message }}
@@ -101,10 +147,10 @@ TimeAgo.addDefaultLocale(en);
               >
               <span
                 v-else-if="
-                  gh_new.type == 'Released ' &&
-                  gh_new.payload &&
-                  gh_new.payload.release &&
-                  gh_new.payload.release.name
+                  gh_event.type == 'ReleaseEvent' &&
+                  gh_event.payload &&
+                  gh_event.payload.release &&
+                  gh_event.payload.release.name
                 "
               >
                 <tippy
@@ -121,16 +167,18 @@ TimeAgo.addDefaultLocale(en);
                       <a
                         class="release_name link"
                         target="_blank"
-                        :href="`https://github.com/${gh_new.repo.name}/releases/tag/${gh_new.payload.release.tag_name}`"
+                        :href="`https://github.com/${gh_event.repo.name}/releases/tag/${gh_event.payload.release.tag_name}`"
                       >
-                        {{ gh_new.payload.release.name }}
+                        {{ gh_event.payload.release.name }}
                       </a>
                     </div>
                   </template>
                 </tippy>
               </span>
 
-              <div class="timestamp">{{ gh_new.time_ago }}</div>
+              <div class="timestamp">
+                {{ timeAgo.format(new Date(gh_event.created_at)) }}
+              </div>
             </div>
           </template>
         </tippy>
@@ -138,58 +186,3 @@ TimeAgo.addDefaultLocale(en);
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  data() {
-    return {
-      news_loaded: false,
-      gh_news: [],
-    };
-  },
-  mounted() {
-    this.load_gh_news();
-  },
-  methods: {
-    async load_gh_news() {
-      let response = await axios.get(
-        // By default browser cache get requests
-        // Because this is a CORS request and github does not accept "Cache-Control" header
-        // Added timestamp parameter that will prevent caching
-        `https://api.github.com/users/waujito/events?timestamp=${new Date()}`,
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      );
-
-      if (response.status == 200) {
-        //this.gh_news = response.data;
-        this.news_loaded = true;
-
-        const timeAgo = new TimeAgo("en_US");
-
-        for (let n in response.data) {
-          let gh_event = response.data[n];
-
-          if (gh_event.type == "PushEvent") {
-            gh_event.type = "Pushed to ";
-          } else if (gh_event.type == "ReleaseEvent") {
-            gh_event.type = "Released ";
-          } else {
-            continue;
-          }
-
-          gh_event.time_ago = timeAgo.format(new Date(gh_event.created_at));
-
-          this.gh_news.push(gh_event);
-        }
-      } else {
-        alert("Cannot load github news");
-        console.log(response);
-      }
-    },
-  },
-};
-</script>

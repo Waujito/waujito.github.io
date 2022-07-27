@@ -1,5 +1,5 @@
-<script setup>
-import { RouterView } from "vue-router";
+<script setup lang="ts">
+import { RouterLink, RouterView } from "vue-router";
 import NavPanelComponent from "./components/NavPanelComponent.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";

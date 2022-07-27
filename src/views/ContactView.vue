@@ -8,7 +8,7 @@
     </div>
     <div class="contact_method">
       <img alt="" src="/img/email_icon.svg" />
-      <span class="contact_name">With <nobr>E-mail:</nobr> </span>
+      <span class="contact_name">With E-mail: </span>
       <a class="link" href="mailto:vetrovvd@yandex.ru" target="_blank"
         >vetrovvd@yandex.ru</a
       >
