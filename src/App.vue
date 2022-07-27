@@ -3,7 +3,6 @@ import { RouterLink, RouterView } from "vue-router";
 import NavPanelComponent from "./components/NavPanelComponent.vue";
 import HeaderComponent from "./components/HeaderComponent.vue";
 import FooterComponent from "./components/FooterComponent.vue";
-// import StayWithRussiaComponent from "./components/StayWithRussiaComponent.vue";
 </script>
 
 <template>
@@ -16,5 +15,4 @@ import FooterComponent from "./components/FooterComponent.vue";
     </div>
   </div>
   <FooterComponent></FooterComponent>
-  <!-- <StayWithRussiaComponent></StayWithRussiaComponent> -->
 </template>
