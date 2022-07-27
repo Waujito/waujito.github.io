@@ -31,5 +31,5 @@ cd ..
 
 rm -rf dist
 
-# For windows: npm run build && cp dist/index.html dist/404.html && cd dist && git init &&  git checkout -b main && git add . && git commit -m "deploy"
+# For windows: pnpm build && cp dist/index.html dist/404.html && cd dist && git init &&  git checkout -b main && git add . && git commit -m "deploy"
 # then git push git@github.com:Waujito/waujito.github.io.git main:gh-pages --force && cd - && rm -r -Force dist
