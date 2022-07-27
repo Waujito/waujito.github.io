@@ -18,7 +18,6 @@
     "vue-tippy": "^6.0.0-alpha.62"
   },
   "devDependencies": {
-    "@octokit/openapi-types": "^12.10.1",
     "@types/jsdom": "^16.2.14",
     "@types/node": "^16.11.45",
     "@vitejs/plugin-vue": "^3.0.1",
