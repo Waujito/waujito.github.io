@@ -16,6 +16,10 @@ jobs:
       matrix:
         node-version: [16.x]
 
+    env:
+      VITE_GITHUB_NICKNAME: Waujito
+      VITE_GITHUB_ID: 53368344
+
     steps:
       - uses: actions/checkout@v3
 
