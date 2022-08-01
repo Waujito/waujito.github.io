@@ -10,12 +10,8 @@
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false"
   },
   "dependencies": {
-    "axios": "^0.27.2",
-    "javascript-time-ago": "^2.5.7",
-    "tippy.js": "^6.3.7",
     "vue": "^3.2.37",
-    "vue-router": "^4.1.2",
-    "vue-tippy": "^6.0.0-alpha.62"
+    "vue-router": "^4.1.2"
   },
   "devDependencies": {
     "@types/jsdom": "^16.2.14",
