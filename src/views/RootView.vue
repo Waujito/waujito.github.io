@@ -7,7 +7,7 @@
         I am a programer. Programming is a really fun and cool hobby for me. I
         love it 💖<br />
         I'm currently learning programming languages such as Python, PHP(with
-        Laravel), JavaScript(with Vue.js)
+        Laravel), TypeScript(with Vue.js) and C#(ASP.NET)
       </div>
       <div class="links">
         <a
