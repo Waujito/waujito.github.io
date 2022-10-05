@@ -44,6 +44,10 @@ jobs:
       # Build
       - name: Build project
         run: pnpm build
+        
+      #Custom not found page. Also fixes github 404 on website update 
+      - name: Copying Custom Not Found Page
+        run: cp dist/index.html dist/404.html
 
       # If Ci tests completed, start to deploy
       - name: Deploy to Github Pages 🚀
