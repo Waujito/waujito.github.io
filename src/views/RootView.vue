@@ -8,7 +8,7 @@
         I'm in a stage of intensive learning modern computer science tools, such as Python, C#(ASP.NET) and TypeScript(Vue.js).
       </div>
       <div class="links">
-        <
+        <a
           class="github_button link"
           href="https://github.com/Waujito"
           target="_blank"
