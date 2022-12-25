@@ -19,6 +19,9 @@
         <a class="link" href="https://t.me/waujito" target="_blank"
           ><img alt="" src="/img/telegram.svg"
         /></a>
+        <a class="link" href="https://vk.com/waujito" target="_blank"
+          ><img alt="" src="/img/VKLogo.svg"
+        /></a>
       </div>
     </div>
   </div>
