@@ -2,10 +2,11 @@
   <div id="root">
     <div class="about">
       <div class="text">
-        Hello there and welcome to my personal website!<br /><br />        
-        My name is Waujito. (Real name is Vetrov Vadim.)<br />
-        I am engaged in programming because it is quite funny and cool for me. I really love it 💖<br />
-        I'm in a stage of intensive learning modern computer science tools, such as Python, C#(ASP.NET) and TypeScript(Vue.js).
+         Hello there and welcome to my personal website!<br /><br />    
+
+         My name is Vetrov Vadim and I am a programmer :) <br />
+         Currently I'm in a stage of intensive learning modern computer science tools, such as Python, TypeScript(Vue.js) and Java(SpringBoot). Not for a long time ago I started to study the disciplines of machine learning and data analysis.
+         I am looking forward for new opportunities and internships!
       </div>
       <div class="links">
         <a
