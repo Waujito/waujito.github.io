@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const userId = import.meta.env.VITE_GITHUB_ID;
+const userId = useRuntimeConfig().public.githubId;
 </script>
 
 <template>

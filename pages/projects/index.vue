@@ -7,10 +7,10 @@
           <div class="title">AMFi bot</div>
           <div class="desc">A bot for messengers.</div>
           <div class="buttons">
-            <RouterLink
+            <NuxtLink
               to="/projects/amfi_bot"
               class="about_project_button green_button"
-              >About project</RouterLink
+              >About project</NuxtLink
             >
             <a
               class="github_button"
@@ -31,10 +31,10 @@
           </div>
 
           <div class="buttons">
-            <RouterLink
+            <NuxtLink
               to="/projects/manga_parser"
               class="about_project_button green_button"
-              >About project</RouterLink
+              >About project</NuxtLink
             >
             <a
               class="github_button"
@@ -51,10 +51,10 @@
           <div class="title">Personal website</div>
           <div class="desc">About me website</div>
           <div class="buttons">
-            <RouterLink
+            <NuxtLink
               to="/projects/personal_website"
               class="about_project_button green_button"
-              >About project</RouterLink
+              >About project</NuxtLink
             >
             <a
               class="github_button"

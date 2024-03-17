@@ -16,7 +16,7 @@
       <div>
         If you know websites with online view mode from where you cannot
         download manga please
-        <RouterLink class="link" to="/contact">contact me: </RouterLink>
+        <NuxtLink class="link" to="/contact">contact me: </NuxtLink>
       </div>
     </div>
     <div class="links">

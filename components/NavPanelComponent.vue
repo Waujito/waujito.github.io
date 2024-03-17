@@ -1,19 +1,17 @@
-<script setup lang="ts">
-import { RouterLink } from "vue-router";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <nav class="leftside_nav">
     <div class="nav_link">
-      <RouterLink to="/" class="main_router_link">
+      <NuxtLink to="/" class="main_router_link">
         <div>
           <img src="/img/home.svg" alt="Home" />
           <span class="alternative_text">Home</span>
         </div>
-      </RouterLink>
+      </NuxtLink>
     </div>
     <div class="nav_link">
-      <RouterLink to="/projects" class="main_router_link">
+      <NuxtLink to="/projects" class="main_router_link">
         <div>
           <img
             src="/img/projects.svg"
@@ -22,10 +20,10 @@ import { RouterLink } from "vue-router";
           />
           <span class="alternative_text">Projects</span>
         </div>
-      </RouterLink>
+      </NuxtLink>
     </div>
     <div class="nav_link">
-      <RouterLink to="/contact" class="main_router_link">
+      <NuxtLink to="/contact" class="main_router_link">
         <div>
           <img
             src="/img/contact_me.svg"
@@ -34,7 +32,7 @@ import { RouterLink } from "vue-router";
           />
           <span class="alternative_text"><nobr>Contact me</nobr></span>
         </div>
-      </RouterLink>
+      </NuxtLink>
     </div>
   </nav>
 </template>

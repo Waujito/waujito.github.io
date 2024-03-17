@@ -18,12 +18,27 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
+# Nuxt dev/build outputs
+.output
+.data
+.nuxt
+.nitro
+.cache
+dist
+
+# Node dependencies
+node_modules
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
 .idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Local env files
+.env
+.env.*
+!.env.example
