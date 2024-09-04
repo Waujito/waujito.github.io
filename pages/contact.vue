@@ -7,11 +7,6 @@
       <a class="link" href="https://t.me/waujito" target="_blank">@waujito</a>
     </div>
     <div class="contact_method">
-      <img alt="" src="/img/VKLogo.svg" />
-      <span class="contact_name">Via VK: </span>
-      <a class="link" href="https://vk.com/waujito" target="_blank">Vadim Vetrov</a>
-    </div>
-    <div class="contact_method">
       <img alt="" src="/img/email_icon.svg" />
       <span class="contact_name">With Email: </span>
       <a class="link" href="mailto:vetrovvd@gmail.com" target="_blank"
